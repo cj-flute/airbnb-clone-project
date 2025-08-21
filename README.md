@@ -121,9 +121,40 @@ Relationships:
 Each payment is made by a user for a booking.
 
 Summary of Relationships:
-A User can own many Properties.
-A User can make many Bookings and Payments.
-A Property can have many Bookings and Reviews.
-A Booking belongs to one User and one Property; it can have one Payment.
-A Review is linked to one User and one Property.
-A Payment is linked to one User and one Booking.
+_ A User can own many Properties.
+_ A User can make many Bookings and Payments.
+_ A Property can have many Bookings and Reviews.
+_ A Booking belongs to one User and one Property; it can have one Payment.
+_ A Review is linked to one User and one Property.
+_ A Payment is linked to one User and one Booking.
+
+**Feature Breakdown:**
+
+1. **API Documentation**
+   _OpenAPI Standard:_ The backend APIs are documented using the OpenAPI standard to ensure clarity and ease of integration.
+   _Django REST Framework:_ Provides a comprehensive RESTful API for handling CRUD operations on user and property data.
+   _GraphQL:_ Offers a flexible and efficient query mechanism for interacting with the backend.
+
+2. **User Authentication**
+   _Endpoints:_ /users/, /users/{user_id}/
+   _Features:_ Register new users, authenticate, and manage user profiles.
+
+3. **Property Management**
+   _Endpoints:_ /properties/, /properties/{property_id}/
+   _Features:_ Create, update, retrieve, and delete property listings.
+
+4. **Booking System**
+   _Endpoints:_ /bookings/, /bookings/{booking_id}/
+   _Features:_ Make, update, and manage bookings, including check-in and check-out details.
+
+5. **Payment Processing**
+   _Endpoints:_ /payments/
+   _Features:_ Handle payment transactions related to bookings.
+
+6. **Review System**
+   _Endpoints:_ /reviews/, /reviews/{review_id}/
+   _Features:_ Post and manage reviews for properties.
+
+7. **Database Optimizations**
+   _Indexing:_ Implement indexes for fast retrieval of frequently accessed data.
+   _Caching:_ Use caching strategies to reduce database load and improve performance.
