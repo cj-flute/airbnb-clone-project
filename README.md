@@ -196,3 +196,14 @@ _APIs:_ Securing APIs prevents unauthorized access, data leaks, and abuse of bac
 
 _In summary:_
 Implementing robust security measures is vital to protect user privacy, ensure safe transactions, maintain data integrity, and uphold the reputation and reliability of the platform.
+
+**CI/CD Pipeline:**
+CI/CD pipelines (Continuous Integration and Continuous Deployment/Delivery) are automated workflows that build, test, and deploy code changes whenever updates are made to the project. They help catch bugs early, ensure code quality, and speed up the release process by automating repetitive tasks.
+
+_Why they are important:_
+_ Ensure new code is automatically tested and integrated, reducing manual errors.
+_ Enable faster and more reliable deployments. \* Improve collaboration and code quality by providing immediate feedback.
+
+_Tools that could be used:_
+_ GitHub Actions: Automates building, testing, and deploying code directly from GitHub.
+_ Docker: Ensures consistent environments for building, testing, and deploying applications. \* Other options: Jenkins, GitLab CI, Travis CI, CircleCI.
