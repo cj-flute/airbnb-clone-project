@@ -10,21 +10,120 @@ This define specific responsibilities and areas of expertise within a developmen
 
 3. _Database Administrator:_ A database administrator (DBA) manages computer databases. The role may include capacity planning, installation, configuration, database design, migration, performance monitoring, security, troubleshooting, as well as backup and data recovery.
 
+4. _DevOps Engineer:_ Handles deployment, monitoring, and scaling of the backend services.
+
+5. _QA Engineer:_ Ensures the backend functionalities are thoroughly tested and meet quality standards.
+
 **Technology Stack:**
 The technology stacks for this project is as follows;
 
-1. Git
-2. GitHub
-3. Django
-4. PostgreSQL
-5. GraphQL
+Git
+GitHub
+Django
+Django REST Framework
+PostgreSQL
+GraphQL
+Celery
+Redis
+Docker
+CI/CD Pipelines
 
-6. _Git:_ A distributed version control system that tracks changes in source code, enabling multiple developers to collaborate efficiently and manage code history.
+    1. _Git:_ A distributed version control system that tracks changes in source code, enabling multiple developers to collaborate efficiently and manage code history.
 
-7. _GitHub:_ A cloud-based platform for hosting Git repositories, facilitating code sharing, collaboration, issue tracking, and project management among team members.
+    2. _GitHub:_ A cloud-based platform for hosting Git repositories, facilitating code sharing, collaboration, issue tracking, and project management among team members.
 
-8. _Django:_ A high-level Python web framework that encourages rapid development and clean, pragmatic design. It handles backend logic, routing, authentication, and more.
+    3. _Django:_ A high-level Python web framework that encourages rapid development and clean, pragmatic design. It handles backend logic, routing, authentication, and more.
 
-9. _PostgreSQL:_ An advanced open-source relational database system known for its reliability, scalability, and support for complex queries and data integrity.
+    4. _Django REST Framework:_ Provides tools for creating and managing RESTful APIs.
 
-10. _GraphQL:_ A query language for APIs and a runtime for executing those queries, allowing clients to request exactly the data they need and nothing more, improving efficiency and flexibility.
+    5. _PostgreSQL:_ An advanced open-source relational database system known for its reliability, scalability, and support for complex queries and data integrity.
+
+    6. _GraphQL:_ A query language for APIs and a runtime for executing those queries, allowing clients to request exactly the data they need and nothing more, improving efficiency and flexibility.
+
+    7. _Celery:_ For handling asynchronous tasks such as sending notifications or processing payments.
+
+    8. _Redis:_ Used for caching and session management.
+
+    9. _Docker:_ Containerization tool for consistent development and deployment environments.
+
+    10. _CI/CD Pipelines:_ Automated pipelines for testing and deploying code changes.
+
+**Database Design:**
+List of entities requied for this project;
+User
+Properties
+Bookings
+Reviews
+Payments
+
+1. **User**
+   Important Fields:
+   id (unique identifier)
+   username or email
+   password_hash
+   full_name
+   date_joined
+
+Relationships:
+_ A user can own multiple properties.
+_ A user can make multiple bookings.
+_ A user can write multiple reviews.
+_ A user can make multiple payments.
+
+2. **Property**
+   Important Fields:
+   id
+   owner_id (references User)
+   title
+   description
+   location
+   price_per_night
+
+Relationships:
+_ Each property is owned by a user.
+_ A property can have multiple bookings. \* A property can have multiple reviews.
+
+3. **Booking**
+   Important Fields:
+   id
+   user_id (references User)
+   property_id (references Property)
+   start_date
+   end_date
+   status (e.g., confirmed, cancelled)
+
+Relationships:
+_ Each booking is made by a user for a property.
+_ Each booking may have an associated payment.
+
+4. **Review**
+   Important Fields:
+   id
+   user_id (references User)
+   property_id (references Property)
+   rating
+   comment
+   created_at
+
+Relationships:
+Each review is written by a user for a property.
+
+5. Payment
+   Important Fields:
+   id
+   user_id (references User)
+   booking_id (references Booking)
+   amount
+   payment_date
+   status
+
+Relationships:
+Each payment is made by a user for a booking.
+
+Summary of Relationships:
+A User can own many Properties.
+A User can make many Bookings and Payments.
+A Property can have many Bookings and Reviews.
+A Booking belongs to one User and one Property; it can have one Payment.
+A Review is linked to one User and one Property.
+A Payment is linked to one User and one Booking.
