@@ -9,3 +9,22 @@ This define specific responsibilities and areas of expertise within a developmen
 2. _Back-End Developer:_ They in turn, implement the core of an app—its algorithms and business logic. Experienced back-end developers not only write code but also do the tasks of an architect—for example, devise an app architecture or design and implement the necessary integrations.
 
 3. _Database Administrator:_ A database administrator (DBA) manages computer databases. The role may include capacity planning, installation, configuration, database design, migration, performance monitoring, security, troubleshooting, as well as backup and data recovery.
+
+**Technology Stack:**
+The technology stacks for this project is as follows;
+
+1. Git
+2. GitHub
+3. Django
+4. PostgreSQL
+5. GraphQL
+
+6. _Git:_ A distributed version control system that tracks changes in source code, enabling multiple developers to collaborate efficiently and manage code history.
+
+7. _GitHub:_ A cloud-based platform for hosting Git repositories, facilitating code sharing, collaboration, issue tracking, and project management among team members.
+
+8. _Django:_ A high-level Python web framework that encourages rapid development and clean, pragmatic design. It handles backend logic, routing, authentication, and more.
+
+9. _PostgreSQL:_ An advanced open-source relational database system known for its reliability, scalability, and support for complex queries and data integrity.
+
+10. _GraphQL:_ A query language for APIs and a runtime for executing those queries, allowing clients to request exactly the data they need and nothing more, improving efficiency and flexibility.
