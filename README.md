@@ -136,25 +136,63 @@ _ A Payment is linked to one User and one Booking.
    _GraphQL:_ Offers a flexible and efficient query mechanism for interacting with the backend.
 
 2. **User Authentication**
-   _Endpoints:_ /users/, /users/{user_id}/
-   _Features:_ Register new users, authenticate, and manage user profiles.
+   _Endpoints:_ /users/, /users/{user*id}/
+   \_Features:* Register new users, authenticate, and manage user profiles.
 
 3. **Property Management**
-   _Endpoints:_ /properties/, /properties/{property_id}/
-   _Features:_ Create, update, retrieve, and delete property listings.
+   _Endpoints:_ /properties/, /properties/{property*id}/
+   \_Features:* Create, update, retrieve, and delete property listings.
 
 4. **Booking System**
-   _Endpoints:_ /bookings/, /bookings/{booking_id}/
-   _Features:_ Make, update, and manage bookings, including check-in and check-out details.
+   _Endpoints:_ /bookings/, /bookings/{booking*id}/
+   \_Features:* Make, update, and manage bookings, including check-in and check-out details.
 
 5. **Payment Processing**
    _Endpoints:_ /payments/
    _Features:_ Handle payment transactions related to bookings.
 
 6. **Review System**
-   _Endpoints:_ /reviews/, /reviews/{review_id}/
-   _Features:_ Post and manage reviews for properties.
+   _Endpoints:_ /reviews/, /reviews/{review*id}/
+   \_Features:* Post and manage reviews for properties.
 
 7. **Database Optimizations**
    _Indexing:_ Implement indexes for fast retrieval of frequently accessed data.
    _Caching:_ Use caching strategies to reduce database load and improve performance.
+
+**API Security**
+
+1. Authentication
+   _What:_ Verifies the identity of users (e.g., via JWT tokens or session-based login).
+   _Why:_ Ensures only legitimate users can access their accounts and personal data, protecting against unauthorized access.
+2. Authorization
+   _What:_ Controls what authenticated users are allowed to do (e.g., only property owners can edit their listings).
+   _Why:_ Prevents users from accessing or modifying resources they don’t own, maintaining data integrity and privacy.
+
+3. Rate Limiting
+   _What:_ Restricts the number of requests a user or IP can make in a given time frame.
+   _Why:_ Protects the API from abuse, brute-force attacks, and denial-of-service (DoS) attempts.
+
+4. Input Validation & Sanitization
+   _What:_ Checks and cleans user input to prevent malicious data (e.g., SQL injection, XSS).
+   _Why:_ Prevents attackers from exploiting vulnerabilities to compromise the system or steal data.
+
+5. Secure Payment Processing
+   _What:_ Uses encrypted connections (HTTPS/SSL) and integrates with trusted payment gateways.
+   _Why:_ Protects sensitive financial information and ensures safe transactions for users.
+
+6. Data Encryption
+   _What:_ Encrypts sensitive data at rest and in transit.
+   _Why:_ Safeguards user data even if the database or network is compromised.
+
+7. Regular Security Audits & Updates
+   _What:_ Periodically reviews code and dependencies for vulnerabilities.
+   _Why:_ Ensures the system remains secure against new and evolving threats.
+
+Why Security is Crucial for Each Area
+_User Data:_ Protecting personal information (emails, passwords, etc.) is essential to maintain user trust and comply with privacy laws.
+_Payments:_ Securing payment data prevents financial fraud and protects both users and the platform from monetary loss.
+_Bookings & Properties:_ Ensures only authorized users can manage bookings and property listings, preventing data tampering and misuse.
+_APIs:_ Securing APIs prevents unauthorized access, data leaks, and abuse of backend resources.
+
+_In summary:_
+Implementing robust security measures is vital to protect user privacy, ensure safe transactions, maintain data integrity, and uphold the reputation and reliability of the platform.
